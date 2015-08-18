@@ -50,7 +50,7 @@ body {
 	overflow: hidden;
 	min-height: 75vh;
 	color: #fcfcfc;
-	background-color: #94629a;
+	background-color: #59332a;
 	text-align: center;
 }
 
@@ -185,7 +185,7 @@ h4 {
 }
 
 .nav-side > li.active > a {
-	background-color: #94629a;
+	background-color: #59332a;
 }
 
 .footer {
