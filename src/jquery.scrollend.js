@@ -84,7 +84,7 @@
 
 	_c.events.scrollend = {
 		defaults : {
-			delay : 150
+			delay : 250
 		},
 		setup: function(data) {
 			var args = arguments,
