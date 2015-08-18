@@ -8,7 +8,7 @@
 		"scrollend",
 		"jQuery",
 		"events",
-		"resize"
+		"scroll"
 	],
 	"authors": [
 		"Erik Nielsen <erik@312development.com>"
