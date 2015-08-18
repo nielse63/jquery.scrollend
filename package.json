@@ -1,37 +1,44 @@
 {
-	"name": "jquery.scrollend",
-	"title": "jQuery scrollend",
-	"description": "A jQuery plugin that allows for window scroll-start event handling.",
-	"version": "0.1.0",
-	"homepage": "https://nielse63.github.io/jquery.scrollend/",
-	"author": {
-		"name": "Erik Nielsen",
-		"email": "erik@312development.com",
-		"url": "http://312development.com"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/nielse63/jquery.scrollend.git"
-	},
-	"licenses": [{
-		"type": "MIT",
-		"url": "https://github.com/nielse63/jquery.scrollend/blob/master/LICENSE.md"
-	}],
-	"dependencies": {
-		"node-promise": "^0.5.10"
-	},
-	"devDependencies": {
-		"blanket": "^1.1.7",
-		"grunt": "~0.4.5",
-		"grunt-casperjs": "^2.1.0",
-		"grunt-contrib-jshint": "^0.11.2",
-		"grunt-contrib-uglify": "^0.9.1",
-		"grunt-contrib-watch": "^0.6.1",
-		"grunt-jsbeautifier": "^0.2.10",
-		"grunt-newer": "^1.1.0",
-		"jshint-html-reporter": "^0.2.4",
-		"load-grunt-tasks": "^3.1.0",
-		"mocha": "^2.2.5",
-		"should": "^6.0.3"
-	}
+  "name": "jquery.scrollend",
+  "title": "jquery scrollend",
+  "description": "A jQuery plugin that allows for window scroll-end event handling.",
+  "version": "0.1.0",
+  "homepage": "http://312development.com",
+  "author": {
+    "name": "Erik Nielsen",
+    "email": "erik@312development.com",
+    "url": "http://312development.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nielse63/jquery.scrollend.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/nielse63/jquery.scrollend/blob/master/LICENSE.md"
+    }
+  ],
+  "dependencies": {
+    "node-promise": "^0.5.10"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-cleaner-css": "^0.2.4",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-csslint": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-csscomb": "^3.0.1",
+    "grunt-csscss": "^0.6.2",
+    "grunt-jsbeautifier": "^0.2.10",
+    "grunt-newer": "^1.1.0",
+    "grunt-shell": "^1.1.2",
+    "jshint-html-reporter": "^0.2.4",
+    "load-grunt-tasks": "^3.1.0"
+  }
 }

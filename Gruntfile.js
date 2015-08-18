@@ -1,4 +1,6 @@
 
+var filepaths = require('./scripts/filepaths');
+
 /*global module:false*/
 module.exports = function(grunt) {
 
@@ -7,6 +9,19 @@ module.exports = function(grunt) {
 	// ========================================================================
 
 	require('load-grunt-tasks')(grunt);
+
+	// Less Files -
+	//   This object represents the Less files that are to be compiled
+	// ========================================================================
+	var lessfiles = {
+		app : [
+			'main'
+		],
+		clique : [
+			'clique',
+			// 'components/slideshow',
+		]
+	};
 
 	// Project configuration.
 	grunt.initConfig({
@@ -25,26 +40,77 @@ module.exports = function(grunt) {
 			' * Version:  <%= pkg.version %>\n' +
 			' * \n' +
 			' */\n\n',
+		less: {
+			options: {
+				sourceMap : true,
+				// ieCompat : false,
+				sourceMapFileInline : true
+			},
+			all: {
+				files: filepaths.less(lessfiles)
+			}
+		},
+		coffee: {
+			options: {
+				join: false,
+				bare: true
+			},
+			app: {
+				files: [{
+					expand: true,
+					cwd: 'build/coffee',
+					src: ['*.coffee'],
+					dest: 'js',
+					ext: '.js',
+					extDot : 'last'
+				}]
+			}
+		},
 		watch: {
+			less: {
+				files: [ 'build/less/**/*.less', 'Gruntfile.js' ],
+				tasks: [ 'less' ]
+			},
+			coffee: {
+				files: [ 'build/coffee/**/*.coffee', 'Gruntfile.js' ],
+				tasks: [ 'newer:coffee' ]
+			},
 			js: {
-				files: [ 'src/js/**/*.js', 'Gruntfile.js' ],
+				files: [ 'build/js/**/*.js', 'Gruntfile.js' ],
 				tasks: [ 'newer:uglify' ]
 			},
 		},
+		concat : {
+			options : {
+				stripBanners : {
+					block : true,
+					line : true
+				}
+			},
+		},
+		cssmin : {
+			combine: {
+				options : {
+					compatibility : '*',
+					keepSpecialComments : 0,
+					restructuring : false
+				},
+				files: [{
+					expand: true,
+					cwd: 'css',
+					src: ['*.css', '!*.min.css'],
+					dest: 'css',
+					ext: '.min.css',
+					extDot : 'last'
+				}]
+			}
+		},
 		uglify: {
 			options : {
-				banner: '<%= banner %>',
-				mangle : {},
-				beautify : false,
-				compress: {
-					warnings: false
-				},
-				beautify: false,
-				expression: false,
-				maxLineLen: 32000,
-				ASCIIOnly: false
+				preserveComments : false,
+				screwIE8 : true
 			},
-			unmin : {
+			build: {
 				options: {
 					mangle : false,
 					compress : false,
@@ -55,17 +121,53 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd : 'src',
-					src: '*.js',
-					dest: 'dist'
+					cwd: 'build/js/clique',
+					src: ['**/*.js', '!**/_*.js'],
+					dest: 'js'
 				}]
 			},
-			min: {
+			app: {
+				options: {
+					mangle : false,
+					compress : false,
+					beautify : {
+						beautify : true,
+						bracketize : true
+					},
+				},
 				files: [{
 					expand: true,
-					cwd: 'dist',
+					cwd: 'build/js/app',
+					src: '**/*.js',
+					dest: 'js'
+				}]
+			},
+			lib: {
+				files: [{
+					expand: true,
+					cwd: 'js/lib',
 					src: ['*.js', '!*.min.js'],
-					dest: 'dist',
+					dest: 'js/lib',
+					ext: '.min.js',
+					extDot : 'last'
+				}]
+			},
+			core : {
+				files: [{
+					expand: true,
+					cwd: 'js/core',
+					src: ['*.js', '!*.min.js'],
+					dest: 'js/core',
+					ext: '.min.js',
+					extDot : 'last'
+				}]
+			},
+			custom: {
+				files: [{
+					expand: true,
+					cwd: 'js',
+					src: ['*.js', '!*.min.js'],
+					dest: 'js',
 					ext: '.min.js',
 					extDot : 'last'
 				}]
@@ -73,6 +175,22 @@ module.exports = function(grunt) {
 		},
 		jsbeautifier: {
 			options: {
+				html: {
+					fileTypes: [".php"],
+					braceStyle: "collapse",
+					indentChar: "\t",
+					indentSize: 1,
+					maxPreserveNewlines: 10,
+					preserveNewlines: true,
+					unformatted: ["a", "sub", "sup", "b", "u", "pre", "code"],
+					wrapLineLength: 0,
+					endWithNewline: true
+				},
+				css: {
+					fileTypes: [".less"],
+					indentChar: "\t",
+					indentSize: 1
+				},
 				js: {
 					braceStyle: "collapse",
 					breakChainedMethods: false,
@@ -93,11 +211,32 @@ module.exports = function(grunt) {
 					endWithNewline: true
 				}
 			},
-			js : {
-				src: ['dist/*.js'],
+			css : {
+				src: ['css/**/*'],
 				filter : function(filepath) {
 					return filepath.indexOf('.min') < 0
 				}
+			},
+			js : {
+				src: ['js/**/*', '!js/plugins/*', '!js/lib/*'],
+				filter : function(filepath) {
+					return filepath.indexOf('.min') < 0
+				}
+			},
+		},
+		csscomb: {
+			options: {
+				config: '.csscomb.json'
+			},
+			css: {
+				files: [{
+					expand: true,
+					cwd: 'css',
+					src: ['*.css', '!*.min.css'],
+					dest: 'css',
+					ext: '.css',
+					extDot : 'last'
+				}]
 			},
 		},
 		jshint: {
@@ -107,19 +246,29 @@ module.exports = function(grunt) {
 				reporterOutput: 'tests/results/jshint-report.html',
 				force: true
 			},
-			all : ['src/*.js']
+			all : ['js/*.js']
 		},
+		shell: {
+			build: {
+				command: 'curl -LG http://github.dev/jquery.scrollend/scripts/build.php',
+			}
+		}
 	});
 
 	// Custom Tasks
 	grunt.registerTask(
+		'build-css',
+		'Builds, cleans, and optmiizes the CSS from .less files',
+		['less', 'cssmin', 'csscomb', 'jsbeautifier:css']
+	);
+	grunt.registerTask(
 		'build-js',
-		'Builds, cleans, and optmiizes al .js',
-		[ 'uglify', 'jsbeautifier' ]
+		'Builds, cleans, and optmiizes the JS from .coffee files',
+		['coffee', 'concat', 'uglify', 'jsbeautifier:js']
 	);
 
-	grunt.registerTask( 'test', [ 'jshint' ] );
-	grunt.registerTask( 'build', [ 'test', 'build-js' ] );
+	grunt.registerTask( 'build', [ 'build-css', 'build-js', 'shell' ] );
+	grunt.registerTask( 'dev', [ 'less', 'coffee' ] );
 	grunt.registerTask( 'default', [ 'watch' ] );
 
 };

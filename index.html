@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en" dir="ltr" manifest="page.appcache">
+<head>
+	<!-- seo -->
+	<title>Scroll End | Github Pages | A jQuery Plugin by Erik Nielsen</title>
+	<meta name="description" content="A jQuery plugin that allows for window scroll-end event handling.">
+	<meta name="robots" content="index, follow">
+	<meta name="url" content="https://nielse63.github.io/jquery.scrollend/">
+
+	<!-- http settings -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="375">
+
+	<!-- DNS Prefect -->
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+
+	<!-- Icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-touch-icon-60x60.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-touch-icon-76x76.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-touch-icon-120x120.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png?_=1439903871">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon-180x180.png?_=1439903871">
+	<link rel="icon" type="image/png" href="images/icons/favicon-32x32.png?_=1439903871" sizes="32x32">
+	<link rel="icon" type="image/png" href="images/icons/android-chrome-192x192.png?_=1439903871" sizes="192x192">
+	<link rel="icon" type="image/png" href="images/icons/favicon-96x96.png?_=1439903871" sizes="96x96">
+	<link rel="icon" type="image/png" href="images/icons/favicon-16x16.png?_=1439903871" sizes="16x16">
+	<link rel="manifest" href="manifest.json?_=1439904373">
+	<link rel="shortcut icon" href="images/icons/favicon.ico?_=1439904373">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png?_=1439903871">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- copyright/author info -->
+	<meta name="copyright" content="2015 Erik Nielsen">
+	<meta name="language" content="en-US">
+	<meta name="revised" content="Saturday, August 15th, 2015, 1:00 pm">
+	<meta name="author" content="Erik Nielsen, erik@312development.com">
+	<meta name="reply-to" content="erik@312development.com">
+	<link rel="me" type="text/html" href="https://plus.google.com/+ErikNielsen312Dev/about">
+	<link rel="author" type="text/html" href="https://plus.google.com/+ErikNielsen312Dev/about">
+
+	<!-- open graph/social -->
+	<meta property="og:title" content="jQuery Scroll End">
+	<meta property="og:site_name" content="Scroll End | Github Pages | A jQuery Plugin by Erik Nielsen">
+	<meta property="og:url" content="https://nielse63.github.io/jquery.scrollend/">
+	<meta property="og:description" content="A jQuery plugin that allows for window scroll-end event handling.">
+	<meta property="fb:app_id" content="1045036275506704" />
+	<meta property="og:type" content="product">
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:image" content="http://nielse63.github.io/jquery.scrollend/images/og-image.jpg?_=1439903871">
+	<meta property="og:image:secure_url" content="https://nielse63.github.io/jquery.scrollend/images/og-image.jpg?_=1439903871">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1280">
+	<meta property="og:image:height" content="698">
+	<meta property="og:updated_time" content="1439904373">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@erikkylenielsen">
+	<meta name="twitter:creator" content="@erikkylenielsen">
+	<meta name="twitter:title" content="jQuery Scroll End">
+	<meta name="twitter:description" content="A jQuery plugin that allows for window scroll-end event handling.">
+	<meta name="twitter:image" content="https://nielse63.github.io/jquery.scrollend/images/og-image.jpg?_=1439903871">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/clique.min.css?_=1439904371">
+	<link rel="stylesheet" href="css/main.min.css?_=1439904371">
+	<link rel="stylesheet" href="css/prism.min.css?_=1439904371">
+</head>
+<body itemscope itemtype="http://schema.org/WebApplication">
+	<meta itemprop="url" content="https://nielse63.github.io/jquery.scrollend/">
+	<meta itemprop="image" content="https://nielse63.github.io/jquery.scrollend/images/og-image.jpg?_=1439903871">
+	<meta itemprop="description" content="A jQuery plugin that allows for window scroll-end event handling.">
+	<meta itemprop="applicationCategory" content="DeveloperApplication">
+	<meta itemprop="applicationSubCategory" content="jQuery Plugin">
+	<meta itemprop="applicationSuite" content="The Chicago Framework">
+	<meta itemprop="downloadUrl" content="https://github.com/nielse63/jquery.scrollend/archive/0.1.0.zip">
+	<meta itemprop="fileFormat" content="application/zip">
+	<meta itemprop="fileSize" content="12 KB">
+	<meta itemprop="softwareVersion" content="0.1.0">
+	<span class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+		<meta itemprop="name" content="Erik Nielsen">
+		<meta itemprop="familyName" content="Nielsen">
+		<meta itemprop="givenName" content="Erik">
+		<meta itemprop="url" content="http://312development.com">
+		<meta itemprop="jobTitle" content="JavaScript Engineer">
+		<meta itemprop="email" content="erik@312development.com">
+	</span>
+	<span class="hidden" itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization">
+		<meta itemprop="name" content="312 Development">
+		<meta itemprop="url" content="http://312development.com">
+		<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="addressLocality">Chicago</span>
+			<span itemprop="addressRegion">IL</span>
+		</span>
+	</span>
+	<meta itemprop="copyrightYear" content="2015">
+	<span class="hidden" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+		<meta itemprop="name" content="Erik Nielsen">
+		<meta itemprop="familyName" content="Nielsen">
+		<meta itemprop="givenName" content="Erik">
+		<meta itemprop="url" content="http://312development.com">
+		<meta itemprop="jobTitle" content="JavaScript Engineer">
+		<meta itemprop="email" content="erik@312development.com">
+	</span>
+	<meta itemprop="dateCreated" content="2015-08-15T10:31:30-05:00">
+	<meta itemprop="dateModified" content="2015-08-18T08:26:13-05:00">
+	<meta itemprop="datePublished" content="2015-08-15T10:31:30-05:00">
+	<meta itemprop="discussionUrl" content="https://github.com/nielse63/jquery.scrollend/issues">
+	<meta itemprop="license" content="http://opensource.org/licenses/MIT">
+	<span class="hidden" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+		<meta itemprop="name" content="312 Development">
+		<meta itemprop="url" content="http://312development.com">
+		<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="addressLocality">Chicago</span>
+			<span itemprop="addressRegion">IL</span>
+		</span>
+	</span>
+	<meta itemprop="version" content="0.1.0">
+	<meta itemprop="operatingSystem" content="Windows 7, OSX 10.6, Android 1.6, iOS 8.0">
+
+	<main class="main">
+		<header class="header">
+			<div class="header-cover"></div>
+			<div class="header-center">
+				<h1>ScrollEnd</h1>
+				<h2>A Custom jQuery Event</h2>
+				<div class="row row-2-cols">
+					<div class="col">
+						<a href="https://github.com/nielse63/jquery.scrollend/archive/0.1.0.zip" class="button button-block" itemprop="potentialAction">Download <i class="icon icon-download"></i></a>
+					</div>
+					<div class="col">
+						<a href="https://github.com/nielse63/jquery.scrollend/" class="button button-block" itemprop="potentialAction">View Source <i class="icon icon-embed2"></i></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<article>
+			<div class="container">
+				<div class="row">
+					<div class="col-12-12 col-4-12-small flex">
+						<aside class="aside flex-item-grow">
+							<div class="aside-inner">
+								<h4>ScrollEnd</h4>
+								<ul class="nav nav-side">
+									<li class="active"><a href="#demo">Demos</a></li>
+									<li><a href="#installation">Installation</a></li>
+									<li><a href="#usage">Usage</a></li>
+									<li><a href="#options">Options</a></li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+					<div class="col-12-12 col-8-12-small">
+						<section class="article" id="demo">
+							<h3 class="article-title">Demo</h3>
+							<p class="article-lead">An example jquery.scrollend in action.</p>
+							<p>Begin resizing your browser window. Event output will be displayed below.</p>
+							<div class="demo-output">
+								<pre>No event</pre>
+							</div>
+						</section>
+						<section class="article" id="installation">
+							<h3 class="article-title">Installation</h3>
+							<p class="article-lead">Manual installation</p>
+							<p>Reference the file in your project:</p>
+							<pre><code class="language-markup">&lt;script src="jquery.scrollend.js"&gt;&lt;/script&gt;</code></pre>
+							<p class="article-lead">Using Bower</p>
+							<pre><code class="language-bash">bower install jquery.scrollend</code></pre>
+							<p class="article-lead">Using NPM</p>
+							<pre><code class="language-bash">npm install jquery.scrollend</code></pre>
+						</section>
+						<section class="article" id="usage">
+							<h3 class="article-title">Usage</h3>
+							<p class="article-lead">Basic usage.</p>
+							<p>Direct method reference:</p>
+							<pre><code class="language-javascript">// Default options
+$(selector).scrollend(function() {
+	// execute callback...
+});
+
+// Custom options
+$(selector).scrollend(1000, function() {
+	// execute callback...
+});</code></pre>
+							<p>Event binding:</p>
+							<pre><code class="language-javascript">// Default options
+$(selector).on('scrollend', function() {
+	// execute callback...
+});
+
+// Custom options
+$(selector).on('scrollend', 1000, function() {
+	// execute callback...
+});</code></pre>
+						</section>
+						<section class="article" id="options">
+							<h3 class="article-title">Options</h3>
+							<p class="article-lead">All plugin &amp; event options.</p>
+							<div class="overflow-container hidden-small">
+								<table class="table-striped">
+									<thead>
+										<tr>
+											<th>Option</th>
+											<th>Type</th>
+											<th>Default</th>
+											<th>Description</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><code>delay</code></td>
+											<td>integer/<br>object</td>
+											<td>0</td>
+											<td>The amount of time, in millisecond, to wait after the first <em>resize</em> event is fired before triggering the event.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="overflow-container visible-small">
+								<table class="table-striped">
+									<tbody>
+										<tr>
+											<th>Option</th>
+											<td><code>delay</code></td>
+										</tr>
+										<tr>
+											<th>Type</th>
+											<td>integer/<br>object</td>
+										</tr>
+										<tr>
+											<th>Default</th>
+											<td>0</td>
+										</tr>
+										<tr>
+											<th>Description</th>
+											<td>The amount of time, in millisecond, to wait after the first <em>resize</em> event is fired before triggering the event.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</article>
+		<footer class="footer">
+			<div class="container">
+				<div class="row flex-middle flex-space-between">
+					<div class="col">
+						<p>&copy; 2015 <a href="http://312development.com" target="_blank">Erik Nielsen / 312 Development</a>.</p>
+					</div>
+					<div class="col">
+						<p><a href="http://www.builtinchicago.org/" target="_blank">Build in Chicago</a> with &hearts;</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</main>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/lib/jquery.min.js?_=1439904373"><\/script>')</script>
+	<script src="js/core/core.min.js?_=1439904373"></script>
+	<script src="js/core/browser.min.js?_=1439904373"></script>
+	<script src="js/jquery.scrollend.min.js?_=1439904373"></script>
+	<script src="js/functions.min.js?_=1439904373"></script>
+	<script src="js/prism.min.js?_=1439904373"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-66367751-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
+</html>
