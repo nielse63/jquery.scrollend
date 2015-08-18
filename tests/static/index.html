@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Resize End Test</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../../dist/jquery.scrollend.js"></script>
+
+	<!-- For Demo Only -->
+	<link rel="stylesheet" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+	<style>
+		.main-wrapper {
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="main-wrapper">
+		<h1 class="site-title">jQuery scrollend event</h1>
+		<h2>Resize your browser window,<br>a completion notice will appear below:</h2>
+		<div class="window"><h3>&nbsp;</h3></div>
+		<br clear="all">
+		<a href="https://github.com/nielse63/jquery.scrollend">View Source</a>
+	</div>
+
+<script>
+	;(function($, window, document) {
+		$(window).on('scrollend', function(e) {
+			console.log('binding');
+		});
+		$(window).scrollend(500, function(e) {
+			console.log('method');
+		});
+	})(jQuery, window, document);
+</script>
+</body>
+</html>

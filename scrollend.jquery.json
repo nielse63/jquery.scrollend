@@ -1,0 +1,23 @@
+{
+	"name":"jQuery scrollend",
+	"version":"1.0.0",
+	"title":"jQuery scrollend",
+	"author":{
+		"name":"Erik Nielsen",
+		"email":"erik@312development.com",
+		"url":"http://312development.com"
+	},
+	"licenses":[{
+		"type":"MIT",
+		"url":"http://opensource.org/licenses/MIT"
+	}],
+	"dependencies":{
+		"jquery":">=1.7"
+	},
+	"description": "A jQuery plugin that allows for window scroll-start event handling.",
+	"keywords":[
+		"resize", "window", "responsive", "handler", "events", "custom events"
+	],
+	"homepage" : "https://github.com/nielse63/jquery.scrollend",
+	"demo" : "http://nielse63.github.io/jquery.scrollend/"
+}
