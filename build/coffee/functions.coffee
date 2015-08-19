@@ -78,8 +78,8 @@ do (_c = Clique)->
 			setActiveNavbar y
 		fixedNavbar y
 
-	_c.$win.on 'resize', ->
-		_c.$('.demo-output pre').text 'Resizing'
+	_c.$win.on 'scroll', ->
+		_c.$('.demo-output pre').text 'Scrolling'
 
-	_c.$win.on 'resizeend', ->
-		_c.$('.demo-output pre').text 'Resizing Complete!'
+	_c.$win.on 'scrollend', ->
+		_c.$('.demo-output pre').text 'Scrolling Complete!'

@@ -95,10 +95,10 @@
 		}
 		return fixedNavbar(y);
 	});
-	_c.$win.on('resize', function() {
-		return _c.$('.demo-output pre').text('Resizing');
+	_c.$win.on('scroll', function() {
+		return _c.$('.demo-output pre').text('Scrolling');
 	});
-	return _c.$win.on('resizeend', function() {
-		return _c.$('.demo-output pre').text('Resizing Complete!');
+	return _c.$win.on('scrollend', function() {
+		return _c.$('.demo-output pre').text('Scrolling Complete!');
 	});
 })(Clique);
