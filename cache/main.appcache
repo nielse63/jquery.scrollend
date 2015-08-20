@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Modified: Wed, 19 Aug 2015 22:44:03 -0500
+# Modified: Wed, 19 Aug 2015 22:48:34 -0500
 
 # CSS
 /jquery.scrollend/css/clique.min.css
@@ -15,7 +15,6 @@ CACHE MANIFEST
 /jquery.scrollend/js/prism.min.js
 
 # IMAGES
-/jquery.scrollend/images/icons
 /jquery.scrollend/images/icons/android-chrome-144x144.png
 /jquery.scrollend/images/icons/android-chrome-192x192.png
 /jquery.scrollend/images/icons/android-chrome-36x36.png
