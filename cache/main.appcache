@@ -1,5 +1,8 @@
 CACHE MANIFEST
-# Modified: Wed, 19 Aug 2015 22:48:34 -0500
+# Modified: Thu, 20 Aug 2015 12:53:34 -0500
+
+# HTML
+/jquery.scrollend/index.html
 
 # CSS
 /jquery.scrollend/css/clique.min.css
