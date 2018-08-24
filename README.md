@@ -61,5 +61,5 @@ $(window).on('scrollend', { delay : 250 }, function() {
 
 This plugin is licensed under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>.  A copy of the license is included in this package.
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nielse63/jquery-scrollend/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nielse63/jquery-scrollend/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Greenkeeper badge](https://badges.greenkeeper.io/nielse63/jquery.scrollend.svg)](https://greenkeeper.io/)
 
